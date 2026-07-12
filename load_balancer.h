@@ -10,14 +10,16 @@ using std::queue, std::vector;
 
 class LoadBalancer {
     private:
-        int threshold;
+        int upper_threshold;
+        int lower_threshold;
         queue<Request> request_q;
         vector<WebServer> servers;
         
     public:
-        LoadBalancer(int num_servers, int t, queue<Request> q);
+        LoadBalancer(int num_servers);
         void cycle();
-
+        Request create_request();        
+        void run(int num_cycles);
 };
 
 

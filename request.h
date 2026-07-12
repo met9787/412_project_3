@@ -5,9 +5,9 @@
 using std::string;
 
 struct Request {
-    string ipIn;
-    string ipOut;
-    int timeRemaining;
-    char jobType;
+    string ip_in;
+    string ip_out;
+    int time_remaining;
+    char job_type;
 };
 

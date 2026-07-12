@@ -14,14 +14,14 @@ void WebServer::assign_request(Request r) {
 }
 
 int WebServer::get_time_remaining() {
-    return curr_request.timeRemaining;
+    return curr_request.time_remaining;
 }
 
 void WebServer::cycle() {
     if (!is_busy) { return; }
 
-    curr_request.timeRemaining--;
-    if (curr_request.timeRemaining <= 0) {
+    curr_request.time_remaining--;
+    if (curr_request.time_remaining <= 0) {
         is_busy = false;
     }
 
