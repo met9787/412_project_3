@@ -37,7 +37,7 @@ int main() {
     LoadBalancer streaming(LBMode::STREAMING, streaming_servers);
     LoadBalancer router(&processing, &streaming, num_servers * 100);
 
-    ofstream log("simulation.log");
+    ofstream log("simulation.txt");
 
     for (int cycle = 0; cycle < num_cycles; cycle++) {
         router.cycle();
@@ -59,7 +59,7 @@ int main() {
     router.log_summary(cout, "router");
     processing.log_summary(cout, "processing");
     streaming.log_summary(cout, "streaming");
-    cout << "\nSee simulation.log for the full per-cycle log.\n";
+    cout << "\nSee simulation.txt for the full per-cycle log.\n";
 
     return 0;
 }
