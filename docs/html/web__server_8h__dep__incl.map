@@ -1,0 +1,7 @@
+<map id="web_server.h" name="web_server.h">
+<area shape="rect" id="node1" title="Defines the WebServer class, which processes a single Request at a time." alt="" coords="161,5,269,32"/>
+<area shape="rect" id="node2" href="$load__balancer_8h.html" title="Defines the LoadBalancer class, which can act as a router or a worker." alt="" coords="79,80,203,107"/>
+<area shape="rect" id="node5" href="$web__server_8cpp.html" title="Implements the WebServer class." alt="" coords="228,80,351,107"/>
+<area shape="rect" id="node3" href="$load__balancer_8cpp.html" title="Implements the LoadBalancer class (router and worker modes)." alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Driver program for the load balancer simulation." alt="" coords="168,155,251,181"/>
+</map>

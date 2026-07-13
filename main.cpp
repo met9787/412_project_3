@@ -49,15 +49,17 @@ int main() {
         streaming.log_status(log, "streaming");
     }
 
+    router.log_summary(log, "router");
+    processing.log_summary(log, "processing");
+    streaming.log_summary(log, "streaming");
+
     log.close();
 
-    cout << "Simulation complete. Final status:\n";
-    cout << "  router:     queue=" << router.get_queue_size() << "\n";
-    cout << "  processing: queue=" << processing.get_queue_size()
-         << " servers=" << processing.get_busy_servers() << "/" << processing.get_num_servers() << "\n";
-    cout << "  streaming:  queue=" << streaming.get_queue_size()
-         << " servers=" << streaming.get_busy_servers() << "/" << streaming.get_num_servers() << "\n";
-    cout << "See simulation.log for the full per-cycle log.\n";
+    cout << "Simulation complete.\n\n";
+    router.log_summary(cout, "router");
+    processing.log_summary(cout, "processing");
+    streaming.log_summary(cout, "streaming");
+    cout << "\nSee simulation.log for the full per-cycle log.\n";
 
     return 0;
 }

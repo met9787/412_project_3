@@ -1,0 +1,8 @@
+<map id="request.h" name="request.h">
+<area shape="rect" id="node1" title="Defines the Request struct representing a single web request." alt="" coords="108,5,191,32"/>
+<area shape="rect" id="node2" href="$load__balancer_8cpp.html" title="Implements the LoadBalancer class (router and worker modes)." alt="" coords="5,229,144,256"/>
+<area shape="rect" id="node3" href="$load__balancer_8h.html" title="Defines the LoadBalancer class, which can act as a router or a worker." alt="" coords="113,155,237,181"/>
+<area shape="rect" id="node5" href="$web__server_8h.html" title="Defines the WebServer class, which processes a single Request at a time." alt="" coords="187,80,295,107"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Driver program for the load balancer simulation." alt="" coords="168,229,251,256"/>
+<area shape="rect" id="node6" href="$web__server_8cpp.html" title="Implements the WebServer class." alt="" coords="261,155,384,181"/>
+</map>

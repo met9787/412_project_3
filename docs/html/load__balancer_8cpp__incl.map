@@ -1,0 +1,12 @@
+<map id="load_balancer.cpp" name="load_balancer.cpp">
+<area shape="rect" id="node1" title="Implements the LoadBalancer class (router and worker modes)." alt="" coords="470,5,609,32"/>
+<area shape="rect" id="node2" href="$load__balancer_8h.html" title="Defines the LoadBalancer class, which can act as a router or a worker." alt="" coords="236,80,360,107"/>
+<area shape="rect" id="node3" href="$request_8h.html" title="Defines the Request struct representing a single web request." alt="" coords="230,229,313,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="543,80,608,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="633,80,707,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="13,304,71,331"/>
+<area shape="rect" id="node5" href="$web__server_8h.html" title="Defines the WebServer class, which processes a single Request at a time." alt="" coords="35,155,143,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="167,155,243,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="267,155,329,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="353,155,416,181"/>
+</map>

@@ -23,6 +23,11 @@ LoadBalancer::LoadBalancer(LBMode mode, int num_servers) : mode(mode) {
     for (int i = 0; i < num_servers; i++) {
         servers.push_back(WebServer());
     }
+
+    initial_num_servers = static_cast<int>(servers.size());
+    initial_queue_size = static_cast<int>(request_q.size());
+    servers_added = 0;
+    servers_removed = 0;
 }
 
 LoadBalancer::LoadBalancer(LoadBalancer* processing, LoadBalancer* streaming, int initial_requests)
@@ -36,6 +41,11 @@ LoadBalancer::LoadBalancer(LoadBalancer* processing, LoadBalancer* streaming, in
     for (int i = 0; i < initial_requests; i++) {
         request_q.push(create_request());
     }
+
+    initial_num_servers = static_cast<int>(servers.size());
+    initial_queue_size = static_cast<int>(request_q.size());
+    servers_added = 0;
+    servers_removed = 0;
 }
 
 void LoadBalancer::add_request(Request r) {
@@ -47,6 +57,7 @@ void LoadBalancer::scale() {
 
     if (qsize > upper_threshold && static_cast<int>(servers.size()) < max_servers) {
         servers.push_back(WebServer());
+        servers_added++;
         return;
     }
 
@@ -54,6 +65,7 @@ void LoadBalancer::scale() {
         for (size_t i = 0; i < servers.size(); i++) {
             if (!servers[i].busy()) {
                 servers.erase(servers.begin() + i);
+                servers_removed++;
                 break;
             }
         }
@@ -152,4 +164,14 @@ void LoadBalancer::log_status(ostream& out, const string& label) const {
         << " busy=" << get_busy_servers()
         << "/" << get_num_servers()
         << "\n";
+}
+
+void LoadBalancer::log_summary(ostream& out, const string& label) const {
+    out << "=== summary: " << label << " ===\n"
+        << "starting queue size: " << initial_queue_size << "\n"
+        << "ending queue size:   " << get_queue_size() << "\n"
+        << "starting web servers: " << initial_num_servers << "\n"
+        << "ending web servers:   " << get_num_servers() << "\n"
+        << "total web servers added:   " << servers_added << "\n"
+        << "total web servers deleted: " << servers_removed << "\n";
 }

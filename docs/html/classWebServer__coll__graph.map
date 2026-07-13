@@ -1,0 +1,5 @@
+<map id="WebServer" name="WebServer">
+<area shape="rect" id="node1" title="Simulates a single web server that processes one Request at a time." alt="" coords="5,199,97,225"/>
+<area shape="rect" id="node2" href="$structRequest.html" title="A single simulated web request handled by a WebServer." alt="" coords="14,109,89,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="22,5,81,32"/>
+</map>

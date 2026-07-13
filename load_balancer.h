@@ -46,6 +46,11 @@ class LoadBalancer {
         queue<Request> request_q;
         vector<WebServer> servers;
 
+        int initial_queue_size;
+        int initial_num_servers;
+        int servers_added;
+        int servers_removed;
+
         // Only used when mode == ROUTER.
         LoadBalancer* processing_lb;
         LoadBalancer* streaming_lb;
@@ -106,4 +111,13 @@ class LoadBalancer {
          * @param label Human-readable name for this instance (e.g. "processing").
          */
         void log_status(ostream& out, const string& label) const;
+
+        /**
+         * @brief Writes an end-of-run summary to a stream: starting/ending
+         *        queue size, starting/ending server count, and total
+         *        servers added/removed via dynamic scaling.
+         * @param out Output stream (e.g. an open log file or std::cout).
+         * @param label Human-readable name for this instance (e.g. "processing").
+         */
+        void log_summary(ostream& out, const string& label) const;
 };
