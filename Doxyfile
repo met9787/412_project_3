@@ -1,0 +1,11 @@
+PROJECT_NAME           = "Load Balancer Simulation"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = .
+FILE_PATTERNS          = *.h *.cpp
+RECURSIVE              = NO
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+QUIET                  = YES

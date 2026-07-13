@@ -1,10 +1,14 @@
+/**
+ * @file web_server.cpp
+ * @brief Implements the WebServer class.
+ */
 #include "web_server.h"
 
 WebServer::WebServer() {
     is_busy = false;
 };
 
-bool WebServer::busy() {
+bool WebServer::busy() const {
     return is_busy;
 }
 
@@ -26,9 +30,5 @@ void WebServer::cycle() {
     }
 
     return;
-    
+
 }
-
-
-
-
